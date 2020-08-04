@@ -20,6 +20,32 @@ def passing_content_to_html():
     return f"Hi, My name is what? My name is who? My name is chika-chika {name}"
 
 
+tweet_dict = {
+              '101':'Hi, I am a tweet! My ID is 101!',
+              '102':'Hi, I am also a tweet! My ID is 102!',
+              '103':'I think therefore I am - Rene Descartes. (103)!'
+              }
+
+@app.route('/show_tweet/<string:tweet_id>', methods=['GET'])
+def get_tweet_via_tweet_id(tweet_id='0'):
+    """
+    To fetch tweet from the server based on tweet ID and display if ID exists.
+
+    Params:
+      tweet_id: Agent Email ID that will be enabled.
+
+    Return:
+      <HTML Response of Tweet>
+    """
+
+    if tweet_id in tweet_dict:
+        tweet = tweet_dict[tweet_id]
+    else:
+        tweet = "This tweet has been deleted!"
+
+    return f"<h1>{tweet}</h1>"
+
+
 @app.route('/run', methods=['POST', 'GET']) # specificying POST is important, else you will get 'Method not allowed' error.
 def run_suite_util():
 
