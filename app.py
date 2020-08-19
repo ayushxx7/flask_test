@@ -46,21 +46,15 @@ def get_tweet_via_tweet_id(tweet_id='0'):
     return f"<h1>{tweet}</h1>"
 
 
-@app.route('/run', methods=['POST','GET']) # specificying POST is important, else you will get 'Method not allowed' error.
-def run_suite_util():
-  return f'{request.form}'
-  print('request.form', request.form)
-  name = request.form['name'] # accessing variables from your form elements.
+@app.route('/about', methods=['POST'])
+def about_me():
+  name = request.form['my_name'] # accessing variables from your form elements.
   choice = request.form['dd'] # notice, we are using the "name" attribute to access the values.
   reason = request.form['reason']
 
   sentence = f'My name is {name} and I would rather have {choice} because {reason}'
   return sentence
-  # example = [suite_name, build_url, host_url]
-  # return render_template('jinja_to_html.html', example=example)
-
 
 if __name__ == "__main__":
-
     print('starting server')
     app.run(debug=True)
