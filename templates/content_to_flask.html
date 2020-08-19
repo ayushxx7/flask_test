@@ -8,6 +8,9 @@
 
 <div>
   <h3>About `Me`</h3>
+  <!-- Creating an About Me HTML Form -->
+  <!-- on form submission, form data will be posted and page will be redirected to /about endpoint -->
+  <!-- We specify post method when submitting data to the server -->
   <form action='/about' method='post'>
     My Name is <input type="text" placeholder="NAME" name="my_name">
     <br>
@@ -19,6 +22,7 @@
     <br>
     because <input type="text" placeholder="Reason" name="reason"></input>
     <br>
+    <!-- element of type submit submits the form -->
     <button type="submit">Submit</button>
   </form>
 </div>

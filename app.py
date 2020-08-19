@@ -48,8 +48,16 @@ def get_tweet_via_tweet_id(tweet_id='0'):
 
 @app.route('/about', methods=['POST'])
 def about_me():
-  name = request.form['my_name'] # accessing variables from your form elements.
-  choice = request.form['dd'] # notice, we are using the "name" attribute to access the values.
+  '''
+  Since our form's action is set to trigger '/about' endpoint,
+  this function will be triggered on form submission.
+
+  To access the form data we use the request module imported from Flask.
+  The format is:
+  element_name = request.form['name_attribute_of_the_element_in_the_form']
+  '''
+  name = request.form['my_name']
+  choice = request.form['dd']
   reason = request.form['reason']
 
   sentence = f'My name is {name} and I would rather have {choice} because {reason}'
