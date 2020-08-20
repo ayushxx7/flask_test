@@ -59,8 +59,11 @@ def about_me():
   name = request.form['my_name']
   choice = request.form['dd']
   reason = request.form['reason']
+  first_number = request.form['first_number']
+  second_number = request.form['second_number']
+  sum_first_second = int(first_number)+int(second_number)
 
-  sentence = f'My name is {name} and I would rather have {choice} because {reason}'
+  sentence = f'My name is {name} and I would rather have {choice} because {reason}. The machine says, that the sum of the numbers entered is: {sum_first_second} and I certainly agree with it.'
   return sentence
 
 if __name__ == "__main__":
