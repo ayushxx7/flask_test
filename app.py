@@ -63,8 +63,13 @@ def about_me():
   second_number = request.form['second_number']
   sum_first_second = int(first_number)+int(second_number)
 
-  sentence = f'My name is {name} and I would rather have {choice} because {reason}. The machine says, that the sum of the numbers entered is: {sum_first_second} and I certainly agree with it.'
-  return sentence
+  about_info = {'name': name,
+                'choice': choice,
+                'reason': reason,
+                'sum_first_second': sum_first_second
+                }
+
+  return render_template('jinja_to_html.html', about_dict = about_info)
 
 if __name__ == "__main__":
     print('starting server')

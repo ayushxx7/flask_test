@@ -1,7 +1,20 @@
-<h1> Hey, this is a Jinja expriment </h1>
+<h1> JINJA 101 </h1>
 
+<br>
+<b>The following Keys were received from the Server:</b>
 <ul>
-    {% for i in example %}
+    {% for i in about_dict %}
     <li>{{i}}</li>
     {% endfor %}
 </ul>
+<b>Genrating a sentence from the information</b>
+<hr>
+<p>
+    Hi, My name is <mark>{{about_dict['name']}}</mark>. I chose <em>{{about_dict['choice']}}</em> because
+    <u>{{about_dict['reason']}}</u>.
+</p>
+<p>
+    The machine says the sum of the numbers that I entered is <b>{{about_dict['sum_first_second']}}</b>, and I certainly
+    agree
+    with it!
+</p>
